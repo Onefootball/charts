@@ -2,12 +2,12 @@ apiVersion: v1
 entries:
   codecov:
   - apiVersion: v1
-    created: 2018-10-04T16:00:24.254234341Z
+    created: 2018-10-04T16:18:30.724917352Z
     description: Codecov Enterprise helm chart
-    digest: dee2c025530a61f777ee06d1d68df8765a6829df5621565344e5d89e11f8cf7c
+    digest: 4f7582944bbbc78b1503d3bd5be4d4e016f250c802fe2c58482e59db88e8ab30
     home: https://codecov.io/
     name: codecov
     urls:
-    - https://onefootball.github.io/charts/codecov-0.0.1.tgz
-    version: 0.0.1
-generated: 2018-10-04T16:00:24.253463845Z
+    - https://onefootball.github.io/charts/codecov-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-10-04T16:18:30.723567418Z
