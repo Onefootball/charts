@@ -1,7 +1,6 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  namespace: {{ .Chart.Name }}
   name: {{ .Chart.Name }}-workers
   labels:
     app: {{ .Chart.Name }}
@@ -16,7 +15,6 @@ spec:
       maxUnavailable: 15%
   template:
     metadata:
-      namespace: {{ .Chart.Name }}
       labels:
         app: {{ .Chart.Name }}
         release: {{ .Release.Name }}

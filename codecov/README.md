@@ -6,7 +6,7 @@
 
 ```console
 $ helm repo add onefootball-charts https://onefootball.github.io/charts/
-$ helm install codecov -f values.yaml
+$ helm install onefootball-charts/codecov -f values.yaml
 ```
 
 ## Installing the Chart
@@ -21,7 +21,7 @@ Create your own `values.yaml` file and set your configs into it.
 Now install the codecov app:
 
 ```console
-$ helm install codecov -f values.yaml
+$ helm install --name codecov onefootball-charts/codecov -f values.yaml
 ```
 
 ## Uninstalling the Chart
