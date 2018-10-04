@@ -1,0 +1,47 @@
+image:
+  repository: codecov/enterprise
+  tag: v4.3.9
+  pullPolicy: IfNotPresent
+service:
+  name: codecov
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 5000
+# Set annotations to your service
+#  annotations:
+    # my.annotation: "my value:
+# example of annotations to aws load balancer
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
+    # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: CERTIFICATE_ARN
+resources:
+  web:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+  workers:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+replicaCount:
+  web: 1
+  workers: 1
+# Your codecov config
+# codecov:
+#   config:
+#     setup:
+#       codecov_url: https://codecov.mycompany.com/
+#       enterprise_license: LONG_LICENSE_KEY
+#       guest_access: off
+#     services:
+#       your database url
+#       database_url: postgres://postgres:postgres@postgres.mycompany.com:5432/postgres
+#       your redis url
+#       redis_url: redis://redis.mycompany.com:6379/1
+#     Set your others codecov config
+#     Example: github client config
+#     github:
+#       client_id: your_client_id
+#       client_secret: your_client_secret
+#       organizations:
+#         - "mycompany"
