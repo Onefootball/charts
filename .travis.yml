@@ -1,0 +1,25 @@
+---
+env:
+  global:
+    - HELM_URL=https://storage.googleapis.com/kubernetes-helm
+    - HELM_TGZ=helm-v2.4.1-linux-amd64.tar.gz
+
+install:
+  # Installing Helm
+  - wget -q ${HELM_URL}/${HELM_TGZ}
+  - tar xzfv ${HELM_TGZ}
+  - PATH=`pwd`/linux-amd64/:$PATH
+  - helm init --client-only
+
+script:
+  - bash package.sh
+
+deploy:
+  provider: pages
+  local-dir: onefootball-charts
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  committer-from-gh: true
+  keep-history: true
+  on:
+    branch: master
