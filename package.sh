@@ -4,6 +4,7 @@ apps="codecov"
 temp_dir=onefootball-charts
 
 mkdir ${temp_dir}
+git archive gh-pages | tar -xv -C ${temp_dir}
 for app in ${apps}; do
 	helm package ${app}/
 done
