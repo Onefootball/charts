@@ -1,0 +1,57 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ template "name" . }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: PACT_BROKER_DATABASE_ADAPTER
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "name" . }}
+              key: database.adapter
+        - name: PACT_BROKER_DATABASE_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "name" . }}
+              key: database.username
+        - name: PACT_BROKER_DATABASE_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "name" . }}
+              key: database.password
+        - name: PACT_BROKER_DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "name" . }}
+              key: database.host
+        - name: PACT_BROKER_DATABASE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "name" . }}
+              key: database.name
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          tcpSocket:
+            port: 80
+        readinessProbe:
+          tcpSocket:
+            port: 80
+        resources:
+{{ toYaml .Values.resources | indent 10 }}

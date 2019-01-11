@@ -1,0 +1,39 @@
+replicaCount: 1
+
+image:
+  repository: dius/pact-broker
+  tag: 2.27.6-1 
+  pullPolicy: IfNotPresent
+
+database:
+  adapter: "postgres"
+  username: "postgres"
+  password: "postgres"
+  host: "postgres.pact"
+  name: "postgres"
+
+resources: {}
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+service:
+  type: ClusterIP
+  port: 80
+  annotations: {}
+    # service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts: []
+  # - url: pact.example.com
+  #   port: https
+  #   tls:
+  #     enabled: true
+  #     secretName: pact-cert
