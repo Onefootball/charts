@@ -1,0 +1,7 @@
+name: pact-broker
+version: 1.0
+description: A Helm chart for pact-broker
+home: https://github.com/pact-foundation/pact_broker
+sources:
+- https://hub.docker.com/r/dius/pact-broker/
+- https://github.com/pact-foundation/pact_broker
