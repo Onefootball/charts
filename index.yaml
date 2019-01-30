@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   codecov:
   - apiVersion: v1
-    created: 2019-01-30T17:08:14.294712578Z
+    created: 2019-01-30T17:21:55.26459215Z
     description: Codecov Enterprise helm chart
     digest: 4f7582944bbbc78b1503d3bd5be4d4e016f250c802fe2c58482e59db88e8ab30
     home: https://codecov.io/
@@ -11,7 +11,7 @@ entries:
     - https://onefootball.github.io/charts/codecov-0.1.0.tgz
     version: 0.1.0
   pact-broker:
-  - created: 2019-01-30T17:08:14.295720386Z
+  - created: 2019-01-30T17:21:55.26505062Z
     description: A Helm chart for pact-broker
     digest: 15f5d059af6e7a8f58925288ed7c9e43a5dad105daa6c823b795f7ce8b01bd21
     home: https://github.com/pact-foundation/pact_broker
@@ -22,4 +22,24 @@ entries:
     urls:
     - https://onefootball.github.io/charts/pact-broker-1.tgz
     version: "1"
-generated: 2019-01-30T17:08:14.293985586Z
+  sentry:
+  - apiVersion: v1
+    appVersion: "9"
+    created: 2019-01-30T17:21:55.268506371Z
+    description: Sentry is a cross-platform crash reporting and aggregation platform.
+    digest: 829636e3887b3e76d7bc1adcad9d82e97ff218fc5a2356baf9838fc79456a81a
+    home: https://sentry.io/
+    icon: https://sentry.io/_static/getsentry/images/branding/png/sentry-glyph-black.png
+    keywords:
+    - debugging
+    - logging
+    maintainers:
+    - email: justin@linux.com
+      name: rothgar
+    name: sentry
+    sources:
+    - https://github.com/getsentry/sentry
+    urls:
+    - https://onefootball.github.io/charts/sentry-1.3.0.tgz
+    version: 1.3.0
+generated: 2019-01-30T17:21:55.263978597Z
