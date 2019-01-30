@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apps="codecov pact-broker"
+apps="codecov pact-broker sentry"
 temp_dir=onefootball-charts
 
 mkdir ${temp_dir}
